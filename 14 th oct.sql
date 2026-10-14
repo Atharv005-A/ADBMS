@@ -65,3 +65,8 @@ update customer set lname='Dhokade' where Custid=3;
 select concat(Custname,lname)from customer;
 select concat(Custname,' ',lname)as  fullname from customer;
 
+select * from customer;
+select substr(Custname,2,2) from customer;
+
+
+select instr(Custname,'a')as postion from customer;
