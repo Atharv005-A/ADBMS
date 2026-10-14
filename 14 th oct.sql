@@ -43,3 +43,25 @@ select * from customer order by price desc;
 
 select * from customer order by Custid;
 select * from customer order by Custid desc;
+
+select * from  customer order by City asc;
+
+select * from customer order by City ,Price;
+select * from customer order by Price,City;
+
+select * from customer order by City desc ,Price asc;
+
+select upper(Custname),lower(Product) from customer
+where Custid<3;
+
+alter table customer
+add column lname varchar(15);
+desc customer;
+
+update customer set lname='Pawar' where Custid=1;
+update customer set lname='Patil' where Custid=2;
+update customer set lname='Dhokade' where Custid=3;
+
+select concat(Custname,lname)from customer;
+select concat(Custname,' ',lname)as  fullname from customer;
+
