@@ -1,0 +1,45 @@
+create database User;
+
+use User;
+
+create table customer
+(
+Custid int,
+Custname varchar(15),
+City varchar(10),
+Product varchar(15),
+Price int
+);
+
+
+alter table customer
+add primary key (Custid);
+
+insert into customer values (1,'Atharv','Sangli','Mobile',45000),
+(2,'prithvi','kolhapur','laptop',60000),
+(3,'abhi','latur','ipad',80000);
+
+select Custname ,product from customer;
+
+create table cloneCustomer as select * from customer;
+select * from cloneCustomer;
+
+select * from customer;			
+
+drop table cloneCustomer;	
+
+select Custname ,City from customer;
+
+select Custname, City from customer where Custid=1;
+
+select Custname,Product,Price from customer where price > 15000;
+select Custname,Product,Price from customer where price < 15000;
+select * from customer where price>15000;
+select * from customer where Custid=1;
+select * from customer where City='Sangli';
+
+select * from customer order by price;
+select * from customer order by price desc;
+
+select * from customer order by Custid;
+select * from customer order by Custid desc;
