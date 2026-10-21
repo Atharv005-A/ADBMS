@@ -77,3 +77,51 @@ select* from emp where firstname like '%v';
 /* limit operator*/
 
 select * from emp order by exp limit 2;
+
+
+/* is null*/
+select * from emp where  exp is null;
+
+/* is not null*/
+select * from emp where  exp is  not null;
+
+
+/*aggregate fun*/
+select count(*) from emp;
+
+select 	count(empid) from emp where dept="it";
+select min(exp)from emp;
+select firstname,max(exp)from emp;
+select sum(exp)from emp;
+select avg(exp) as emp_exr from emp;
+
+select firstname from emp
+where exp=(select max(exp) from emp );
+
+/* group by*/
+select dept,count(*) as emp_cnt
+from emp group by dept;
+
+select role,count(*) as emp_cnt
+from emp group by role;
+
+select gender,count(*) as gender_cnt
+from emp group by gender;
+
+/* having clause-- each gorup produced by group by clause is evaluted by the having clause and if the result is true , the row is included in the result set*/
+/*the having  clause was added to sql because the where keyword cannot be used with aggregate function*/
+
+select dept,sum(exp) as t_exp
+from emp group by dept 
+having t_exp>=10 and t_exp<=20;
+
+select role,sum(exp)as t_exp1
+from emp group by role
+having t_exp1 >=10 and t_exp1<=20;
+
+
+select dept,count(empid)
+from emp
+group by dept
+having count(empid)>2
+order by count(empid) desc;
