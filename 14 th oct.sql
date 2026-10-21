@@ -70,3 +70,33 @@ select substr(Custname,2,2) from customer;
 
 
 select instr(Custname,'a')as postion from customer;
+
+
+select substr(custname,1,3),instr(custname,'a')
+from customer where custid<3;
+
+-- date and time
+
+select now();
+ 
+ select now() as current_datetime;
+ 
+ 
+ 
+ alter table customer add column date date;
+ 
+
+ update customer
+ set date="2026/10/04";
+ 
+ set sql_safe_updates=0;
+ 
+ select* from customer;
+ 
+ --
+ 
+ 
+ alter table customer
+ drop date;
+ 
+ 
